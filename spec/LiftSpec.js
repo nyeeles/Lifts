@@ -24,7 +24,38 @@ describe("Lift", function() {
   });
 
   it("starts on the ground floor", function() {
-    expect(lift.floor).toEqual("G")
+    expect(lift.floor).toEqual(0)
+  });
+
+  it("can go up to floor 4", function() {
+    expect(lift.topFloor).toEqual(4)
+
+  });
+
+  it("it's bottom floor is the basement", function() {
+    expect(lift.bottomFloor).toEqual(-1)
+  });
+
+  it("can go up", function() {
+    lift.goUp()
+    expect(lift.floor).toEqual(1)
+  });
+
+  it("can't go above floor 4", function() {
+    lift.floor = 4
+    lift.goUp()
+    expect(lift.floor).toEqual(4)    
+  });
+
+  it("can go down", function() {
+    lift.goDown()
+    expect(lift.floor).toEqual(-1)
+  });
+
+  it("can't go below the basement", function() {
+    lift.floor = -1
+    lift.goDown()
+    expect(lift.floor).toEqual(-1)
   });
 
 });
