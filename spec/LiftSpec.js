@@ -58,4 +58,20 @@ describe("Lift", function() {
     expect(lift.floor).toEqual(-1)
   });
 
+  it("can go to a specified floor froom any current floor", function() {
+    lift.goTo(4)
+    expect(lift.floor).toEqual(4)
+    lift.goTo(-1)
+    expect(lift.floor).toEqual(-1)
+  })
+
+  it("goes to any floor where an up button was pressed", function() {
+    var floor2 = new Floor(2, lift)
+    expect(lift.floor).toEqual(0)
+    floor2.upButton()
+    expect(lift.floor).toEqual(2)
+  })
+
+  
+
 });
