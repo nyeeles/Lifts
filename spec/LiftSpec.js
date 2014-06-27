@@ -16,7 +16,7 @@
 //   });
 
 var lift;
-var floor2;
+var floorPanel2;
 
 beforeEach(function() {
   lift = new Lift();
@@ -120,17 +120,17 @@ describe("Floor", function() {
 
   beforeEach(function() {
     lift = new Lift();
-    floor2 = new Floor(2, lift);
+    floorPanel2 = new FloorPanel(2, lift);
   });
 
 
   it("calls a lift when an upButton is pressed", function() {
-    floor2.upButton();
+    floorPanel2.upButton();
     expect(lift.floor).toEqual(2);
   });
 
   it("calls a lift when a downButton is pressed", function() {
-    floor2.downButton();
+    floorPanel2.downButton();
     expect(lift.floor).toEqual(2);
   });
 
